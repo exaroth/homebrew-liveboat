@@ -1,0 +1,38 @@
+name: E2E Test
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Install deps
+        run: |
+          brew update
+          brew install newsboat
+          brew tap exaroth/liveboat
+          brew install liveboat
+
+      - name: Check Liveboat version
+        run: |
+          liveboat --version
+      
+      - name: Update templates
+        run: |
+          LIVEBOAT_TEMPLATE_DIR=./templates liveboat -x update --config-file=test_data/liveboat-config.toml
+
+      - name: Run newsboat
+        run: newsboat -u test_data/urls -C test_data/newsboat-config -c cache.db -x reload
+
+      - name: Run liveboat
+        run: liveboat --template-path=templates/default --config-file=test_data/liveboat-config.toml
+
