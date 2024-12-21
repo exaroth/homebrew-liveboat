@@ -5,7 +5,7 @@ class Liveboat < Formula
   homepage "https://github.com/exaroth/liveboat"
   url "https://github.com/exaroth/liveboat/releases/download/v1.0.0/liveboat-darwin"
   version "1.0.0"
-  sha256 "e73df3d64108da48af7c3c3ba8fc9b049a77cff202ee77ad3bfae685ecd9b85b"
+  sha256 "85aaac4b0c6536ab8a17b0fd57b4955082164a0335f80851ad1c129eb96d91e7"
 
   def install
     bin.install "liveboat-darwin" => "liveboat"
