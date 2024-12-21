@@ -26,13 +26,12 @@ jobs:
         run: |
           liveboat --version
       
-      # - name: Update templates
-      #   run: |
-      #     LIVEBOAT_TEMPLATE_DIR=./templates liveboat -x update --config-file=test_data/liveboat-config.toml
+      - name: Update templates
+        run: |
+          LIVEBOAT_TEMPLATE_DIR=./templates liveboat -x update --config-file=test_data/liveboat-config.toml
 
-      # - name: Run newsboat
-      #   run: newsboat -u test_data/urls -C test_data/newsboat-config -c cache.db -x reload
+      - name: Run newsboat
+        run: newsboat -u test_data/urls -C test_data/newsboat-config -c cache.db -x reload
 
-      # - name: Run liveboat
-      #   run: liveboat --template-path=templates/default --config-file=test_data/liveboat-config.toml
-
+      - name: Run liveboat
+        run: liveboat --template-path=templates/default --config-file=test_data/liveboat-config.toml
