@@ -3,9 +3,9 @@
 class Liveboat < Formula
   desc "Static page generator for Newsboat feeds"
   homepage "https://github.com/exaroth/liveboat"
-  url "https://github.com/exaroth/liveboat/releases/download/v1.1.3/liveboat-darwin"
-  version "1.1.3"
-  sha256 "bb01868da3e7bf38a6b54768899764f9de898d58565b4d85635c203317beabb0"
+  url "https://github.com/exaroth/liveboat/releases/download/v1.1.4/liveboat-darwin"
+  version "1.1.4"
+  sha256 "84920b925b527f4e8abb0e00b0560d1ec5a768794ec960a5362d1a426c01f5b2"
 
   def install
     bin.install "liveboat-darwin" => "liveboat"
