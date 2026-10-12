@@ -13,7 +13,7 @@ jobs:
 
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Install deps
         run: |
@@ -25,7 +25,7 @@ jobs:
       - name: Check Liveboat version
         run: |
           liveboat --version
-      
+
       - name: Update templates
         run: |
           LIVEBOAT_TEMPLATE_DIR=./templates liveboat -x update --config-file=test_data/liveboat-config.toml
